@@ -5,7 +5,31 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        run();
+        //run();
+        Enemy_Characters Creep1 = new Enemy_Characters(120, 20);
+        Enemy_Characters Creep2 = new Enemy_Characters(150, 30);
+        Enemy_Characters Creep3 = new Enemy_Characters(10, 3);
+        Enemy_Characters Creep4 = new Enemy_Characters(2350, 350);
+        Enemy_Characters Creep5 = new Enemy_Characters(1520, 430);
+        Doubly_Linked_List<Enemy_Characters> lst = new Doubly_Linked_List<Enemy_Characters>();
+        System.out.println("Size:  " + lst.size());
+        lst.add(Creep2);
+        System.out.println("Size:  " + lst.size());
+        lst.add(Creep3);
+        System.out.println("Size:  " + lst.size());
+        System.out.println(lst.toString());
+        lst.add(Creep4);
+        System.out.println("Size:  " + lst.size());
+        System.out.println("Demonstration element with index 2:   " + lst.showEl(2));
+        System.out.println("Delete element Creep 2: " + lst.removeEl(Creep2));
+        System.out.println("Delete element Creep 2: " + lst.removeEl(Creep2));
+        System.out.println("Delete index Creep 3: ");lst.removeInd(1);
+        System.out.println("Size:  " + lst.size());
+        System.out.println("Contains:\n Not: " +  lst.contains(Creep5) + "  Yep:  " + lst.contains(Creep4));
+        Object []array = lst.toArray();
+        for (Object el : array) {
+            System.out.println(el);
+        }
     }
 
     public static void hit_or_heall(Player Hero, Enemy_Characters Creep){
